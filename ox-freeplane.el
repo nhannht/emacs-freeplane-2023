@@ -3,6 +3,7 @@
 ;; Copyright (C) 2013, 2014  Free Software Foundation, Inc.
 
 ;; Author: Jambunathan K <kjambunathan at gmail dot com>
+;; Maintainer: Nhannht <nhanclassroom at gmail dot com>
 ;; Keywords: outlines, hypermedia, calendar, wp
 
 ;; This file is not part of GNU Emacs.
@@ -330,7 +331,7 @@ will result in following node:
 				(when itemized-contents-p
 				  contents))))
     (concat (let ((title (org-export-data title info)))
-	      (case org-freeplane-section-format
+	      (cl-case org-freeplane-section-format
 		(inline
 		  (org-freeplane--richcontent
 		   'node (concat (format "\n<h2>%s</h2>" title)
@@ -438,7 +439,7 @@ holding contextual information."
 				(org-element-property :ID headline))))
 	     (preferred-id (car ids))
 	     (extra-ids (cdr ids))
-	     (left-p (zerop (% headline-order 2))))
+	     (left-p (zerop (% (or  headline-order 0) 2))))
 	(org-freeplane--build-stylized-node
 	 (org-freeplane--get-node-style headline info)
 	 (format "<node ID=\"%s\" POSITION=\"%s\" FOLDED=\"%s\">\n</node>"
