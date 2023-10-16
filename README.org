@@ -1,0 +1,30 @@
+-*- mode: Org; org-download-image-dir: "./images"; org-download-method:directory -*-
+* How to install
+** Load file directly
+#+begin_src elisp
+;; clone or download or copy content to file ox-freeplane.el
+(load-file 'path-to-your-ox-freeplane.el)
+#+end_src
+** Use your package management framework
+*** Example of doom emacs
+#+begin_src elisp
+;; package.el
+(package! ox-freeplane
+  :recipe (:host github :repo "nhannht/emacs-freeplane-2023"
+         :files ("ox-freeplane.el")))
+;; config.el
+(use-package! ox-freeplane)
+#+end_src
+
+* Examples :ATTACH:
+:PROPERTIES:
+:ID: 62b82ffc-e642-41dd-be5f-f85b8841b2a2
+:END:
+- Org so rich in syntaxs, I use a sample  with fairly complexity: [[https://github.com/alhassy/emacs.d/blob/master/README.org][A Life Configuring Emacs]] to testing. With only 1 added line ~#+OPTIONS: broken-links:mark~ because some links cannot be resolve (notice this is the problem of default org html export, not from this package ) .Feel free to create issues if you found any "none work" case.
+
+
+
+[[download:Examples/_20231017_032416screenshot.png]]
+
+*** Notes
+- All the works belongs to Mr [[https://github.com/fnatter/][Fnatter]] . I am just the one that want to use something like Freeplane and Org the same time, but so lazy to implement from scratch, origin authors stop contribute to his project more than 8 years. The default =ox-freemind= in =org-mode= source code simply broken. So I decided to maintain it.
