@@ -24,7 +24,7 @@
 
 
 
-[[download:Examples/_20231017_032416screenshot.png]]
+[[file:images/Examples/_20231017_032416screenshot.png]]
 
 *** Notes
 - All the works belongs to Mr [[https://github.com/fnatter/][Fnatter]] . I am just the one that want to use something like Freeplane and Org the same time, but so lazy to implement from scratch, origin authors stop contribute to his project more than 8 years. The default =ox-freemind= in =org-mode= source code simply broken. So I decided to maintain it.
